@@ -1,8 +1,5 @@
 === Plugin Name ===
 Contributors: Angela Dimitriou
-Donate link: http://example.com/
-Tags: comments, spam
-Requires at least: 4.3
 Tested up to: 4.3
 Stable tag: 4.3
 License: GPLv2 or later
