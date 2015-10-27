@@ -40,9 +40,15 @@ class MooCViewSettingsPage
         $this->options['moocview_siteurl'] = get_option('moocview_siteurl');
 		$this->options['moocview_sitewspath'] = get_option('moocview_sitewspath'); 
 		$this->options['moocview_sitetoken'] = get_option('moocview_sitetoken');
+		$this->options['moocview_category_view_path'] = get_option('moocview_category_view_path');
+		$this->options['moocview_category_id_par'] = get_option('moocview_category_id_par'); 
+		$this->options['moocview_course_view_path'] = get_option('moocview_course_view_path');
+		$this->options['moocview_course_id_par'] = get_option('moocview_course_id_par'); 
+		$this->options['moocview_user_view_path'] = get_option('moocview_user_view_path');
+		$this->options['moocview_user_id_par'] = get_option('moocview_user_id_par'); 
 		?>
         <div class="wrap">
-            <h2>Moodle Course View settings</h2>           
+            <h2><? echo __("Moodle Course View settings", 'moocview')</h2>           
             <form method="post" action="options.php">
             <?php
                 // This prints out all hidden setting fields
@@ -70,7 +76,7 @@ class MooCViewSettingsPage
         register_setting(
             'moocview_settings',
 			'moocview_siteurl', // Option name
-            'sanitize_text_field' // Sanitize
+            'esc_url' // Sanitize
         );
 		register_setting(
             'moocview_settings',
@@ -82,17 +88,47 @@ class MooCViewSettingsPage
 		    'moocview_sitetoken', // Option name
             'sanitize_text_field' // Sanitize
         );
-
+		register_setting(
+            'moocview_settings',
+		    'moocview_category_view_path', // Option name
+            'sanitize_text_field' // Sanitize
+        );
+		register_setting(
+            'moocview_settings',
+		    'moocview_category_id_par', // Option name
+            'sanitize_text_field' // Sanitize
+        );
+		register_setting(
+            'moocview_settings',
+		    'moocview_course_view_path', // Option name
+            'sanitize_text_field' // Sanitize
+        );
+		register_setting(
+            'moocview_settings',
+		    'moocview_course_id_par', // Option name
+            'sanitize_text_field' // Sanitize
+        );
+		register_setting(
+            'moocview_settings',
+		    'moocview_user_view_path', // Option name
+            'sanitize_text_field' // Sanitize
+        );
+		register_setting(
+            'moocview_settings',
+		    'moocview_user_id_par', // Option name
+            'sanitize_text_field' // Sanitize
+        );
+		
         add_settings_section(
             'moocview_settings_section', // ID
-            'Moodle Course View Settings', // Title
+            __('Moodle Course View Settings','moodle-courses-view'), // Title
             array( $this, 'print_section_info' ), // Callback
             'moodle-courses-view' // Page
         );  
 
         add_settings_field(
             'moocview_siteurl',
-            'Moodle site', 
+            __('Moodle site','moodle-courses-view'), 
             array( $this, 'moocview_siteurl_callback' ), // Callback
             'moodle-courses-view', // Page
             'moocview_settings_section' // Section           
@@ -100,7 +136,7 @@ class MooCViewSettingsPage
 
         add_settings_field(
             'moocview_sitewspath', 
-            'Web service path', 
+            __('Web service path','moodle-courses-view'), 
             array( $this, 'moocview_sitewspath_callback' ), 
             'moodle-courses-view', 
             'moocview_settings_section'
@@ -108,11 +144,59 @@ class MooCViewSettingsPage
         
         add_settings_field(
             'moocview_sitetoken', 
-            'Web service user token', 
+            __('Web service user token','moodle-courses-view'), 
             array( $this, 'moocview_sitetoken_callback' ), 
             'moodle-courses-view', 
             'moocview_settings_section'
-        );      
+        );   
+
+		add_settings_field(
+            'moocview_category_view_path', 
+            __('Moodle site category view path','moodle-courses-view'), 
+            array( $this, 'moocview_category_view_path_callback' ), 
+            'moodle-courses-view', 
+            'moocview_settings_section'
+        );
+		
+		add_settings_field(
+            'moocview_category_id_par', 
+            __('Moodle site category id parameter','moodle-courses-view'), 
+            array( $this, 'moocview_category_id_par_callback' ), 
+            'moodle-courses-view', 
+            'moocview_settings_section'
+        );
+	
+		add_settings_field(
+            'moocview_course_view_path', 
+            __('Moodle site course view path','moodle-courses-view'), 
+            array( $this, 'moocview_course_view_path_callback' ), 
+            'moodle-courses-view', 
+            'moocview_settings_section'
+        );
+		
+		add_settings_field(
+            'moocview_course_id_par', 
+            __('Moodle site course id parameter','moodle-courses-view'), 
+            array( $this, 'moocview_course_id_par_callback' ), 
+            'moodle-courses-view', 
+            'moocview_settings_section'
+        );
+		
+		add_settings_field(
+            'moocview_user_view_path', 
+            __('Moodle site user view path','moodle-courses-view'), 
+            array( $this, 'moocview_user_view_path_callback' ), 
+            'moodle-courses-view', 
+            'moocview_settings_section'
+        );
+		
+		add_settings_field(
+            'moocview_user_id_par', 
+            __('Moodle site user id parameter','moodle-courses-view'), 
+            array( $this, 'moocview_user_id_par_callback' ), 
+            'moodle-courses-view', 
+            'moocview_settings_section'
+        );
     }
 
     /** 
@@ -120,7 +204,7 @@ class MooCViewSettingsPage
      */
     public function print_section_info()
     {
-        print 'Define Moodle details:';
+        print __('Define Moodle web service connection details and category, course and user view URLs\' form:','moodle-courses-view');
     }
 
     /** 
@@ -144,7 +228,7 @@ class MooCViewSettingsPage
             isset( $this->options['moocview_sitewspath'] ) ? esc_attr( $this->options['moocview_sitewspath']) : ''
         );
     }
-    
+	
     /** 
      * Get the settings option array and print one of its values
      */
@@ -155,4 +239,70 @@ class MooCViewSettingsPage
             isset( $this->options['moocview_sitetoken'] ) ? esc_attr( $this->options['moocview_sitetoken']) : ''
         );
     }
+	
+	/** 
+     * Get the settings option array and print one of its values
+     */
+    public function moocview_category_view_path_callback()
+	{
+		printf(
+            '<input type="text" id="moocview_category_view_path" name="moocview_category_view_path" value="%s" size="100"/>',
+            (isset( $this->options['moocview_category_view_path']) && !empty($this->options['moocview_category_view_path'])) ? esc_attr( $this->options['moocview_category_view_path']) : '/course/index.php'
+        );
+	}
+	
+	/** 
+     * Get the settings option array and print one of its values
+     */
+    public function moocview_category_id_par_callback()
+	{
+		printf(
+            '<input type="text" id="moocview_category_id_par" name="moocview_category_id_par" value="%s" size="100"/>',
+            (isset( $this->options['moocview_category_id_par'] ) && !empty($this->options['moocview_category_id_par'])) ? esc_attr( $this->options['moocview_category_id_par']) : 'categoryid'
+        );
+	}
+	
+	/** 
+     * Get the settings option array and print one of its values
+     */
+    public function moocview_course_view_path_callback()
+	{
+		printf(
+            '<input type="text" id="moocview_course_view_path" name="moocview_course_view_path" value="%s" size="100"/>',
+            (isset( $this->options['moocview_course_view_path'] ) && !empty($this->options['moocview_course_view_path'])) ? esc_attr( $this->options['moocview_course_view_path']) : '/course/view.php'
+        );
+	}
+	
+	/** 
+     * Get the settings option array and print one of its values
+     */
+    public function moocview_course_id_par_callback()
+	{
+		printf(
+            '<input type="text" id="moocview_course_id_par" name="moocview_course_id_par" value="%s" size="100"/>',
+            (isset( $this->options['moocview_course_id_par'] ) && !empty($this->options['moocview_course_id_par'])) ? esc_attr( $this->options['moocview_course_id_par']) : 'id'
+        );
+	}
+	
+	/** 
+     * Get the settings option array and print one of its values
+     */
+    public function moocview_user_view_path_callback()
+	{
+		printf(
+            '<input type="text" id="moocview_user_view_path" name="moocview_user_view_path" value="%s" size="100"/>',
+            (isset( $this->options['moocview_user_view_path'] ) && !empty($this->options['moocview_user_view_path'])) ? esc_attr( $this->options['moocview_user_view_path']) : '/user/view.php'
+        );
+	}
+	
+	/** 
+     * Get the settings option array and print one of its values
+     */
+    public function moocview_user_id_par_callback()
+	{
+		printf(
+            '<input type="text" id="moocview_user_id_par" name="moocview_user_id_par" value="%s" size="100"/>',
+            (isset( $this->options['moocview_user_id_par'] ) && !empty($this->options['moocview_user_id_par'])) ? esc_attr( $this->options['moocview_user_id_par']) : 'id'
+        );
+	}
 }

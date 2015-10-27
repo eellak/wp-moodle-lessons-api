@@ -1,0 +1,154 @@
+# Copyright (C) 2015 Moodle Courses View
+# This file is distributed under the same license as the Moodle Courses View package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Moodle Courses View 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/moodle-courses-"
+"view\n"
+"POT-Creation-Date: 2015-10-26 14:34:59+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: admin.php:124
+msgid "Moodle Course View Settings"
+msgstr ""
+
+#: admin.php:131
+msgid "Moodle site"
+msgstr ""
+
+#: admin.php:139
+msgid "Web service path"
+msgstr ""
+
+#: admin.php:147
+msgid "Web service user token"
+msgstr ""
+
+#: admin.php:155
+msgid "Moodle site category view path"
+msgstr ""
+
+#: admin.php:163
+msgid "Moodle site category id parameter"
+msgstr ""
+
+#: admin.php:171
+msgid "Moodle site course view path"
+msgstr ""
+
+#: admin.php:179
+msgid "Moodle site course id parameter"
+msgstr ""
+
+#: admin.php:187
+msgid "Moodle site user view path"
+msgstr ""
+
+#: admin.php:195
+msgid "Moodle site user id parameter"
+msgstr ""
+
+#: admin.php:207
+msgid ""
+"Define Moodle web service connection details and category, course and user "
+"view URLs' form:"
+msgstr ""
+
+#: lib.php:107
+msgid "Category"
+msgstr ""
+
+#: lib.php:107
+msgid "Course"
+msgstr ""
+
+#: lib.php:107
+msgid "Teacher(s)"
+msgstr ""
+
+#: lib.php:114 widget.php:58 widget.php:69
+msgid "course"
+msgstr ""
+
+#: lib.php:114 widget.php:58 widget.php:69 widget.php:143
+msgid "courses"
+msgstr ""
+
+#: lib.php:128
+msgid "No summary added to this course."
+msgstr ""
+
+#: lib.php:134
+msgid "Teacher"
+msgstr ""
+
+#: lib.php:134
+msgid "Teachers"
+msgstr ""
+
+#: lib.php:148
+msgid "profile image of"
+msgstr ""
+
+#: widget.php:85 widget.php:111
+msgid "More ..."
+msgstr ""
+
+#: widget.php:129 widget.php:130 widget.php:148
+msgid "Maximum courses"
+msgstr ""
+
+#: widget.php:130 widget.php:149
+msgid "per category"
+msgstr ""
+
+#: widget.php:134
+msgid "Title"
+msgstr ""
+
+#: widget.php:140
+msgid "Type"
+msgstr ""
+
+#: widget.php:143
+msgid "categories"
+msgstr ""
+
+#: widget.php:143
+msgid "both"
+msgstr ""
+
+#: widget.php:158
+msgid "Link for detailed course list"
+msgstr ""
+
+#: widget.php:175
+msgid "Other..."
+msgstr ""
+
+#: widget.php:187
+msgid "Course category parameter"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Moodle Courses View"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A plugin to display the list of courses and course categories of a moodle "
+"installation."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Angela Dimitriou"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.dbnet.ntua.gr/~angela/"
+msgstr ""

@@ -1,0 +1,52 @@
+.categorycourses{
+	margin: 5px 0 5px 0;
+}
+
+.categorytitle{
+	border: 1px #d1d8dc solid;
+	background-color: #f4f7f8;
+	padding: 5px;
+}
+
+.course{
+	border: 1px #d1d8dc solid;
+	border-top: 0px;
+	padding: 10px;
+}
+
+.coursetitle{
+	
+}
+.summary {
+	margin-left: 0px;
+}
+.summary img{
+	width: 50px;
+	max-height:50px;
+	float: left;
+	margin: 0 10px 0 0;
+	
+}
+
+.emptysummary {
+	font-style: italic;
+	color: #c1c8cc;
+}
+
+.teacherlist {
+	color: #01577c;
+	font-weight:bold;
+	width:100%;
+}
+
+.teacher {
+	margin: 0 0 0 10px;
+	color: #31383c;
+	font-weight:normal;
+}
+
+
+.teacher img {
+	margin-right:5px;
+	height: 20px;	
+}
