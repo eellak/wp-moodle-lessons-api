@@ -87,11 +87,11 @@ msgstr "Το μάθημα δε διαθέτει περιγραφή."
 
 #: lib.php:134
 msgid "Teacher"
-msgstr "Teacher"
+msgstr "Διδάσκων"
 
 #: lib.php:134
 msgid "Teachers"
-msgstr "Teachers"
+msgstr "Διδάσκοντες"
 
 #: lib.php:148
 msgid "profile image of"
