@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Moodle Courses View package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Moodle Courses View 1.0\n"
+"Project-Id-Version: Moodle Courses View 1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/moodle-courses-"
 "view\n"
 "POT-Creation-Date: 2015-10-26 14:34:59+00:00\n"
@@ -75,11 +75,11 @@ msgstr "Διδάσκων(-οντες)"
 
 #: lib.php:114 widget.php:58 widget.php:69
 msgid "course"
-msgstr "course"
+msgstr "μάθημα"
 
 #: lib.php:114 widget.php:58 widget.php:69 widget.php:143
 msgid "courses"
-msgstr "courses"
+msgstr "μαθήματα"
 
 #: lib.php:128
 msgid "No summary added to this course."

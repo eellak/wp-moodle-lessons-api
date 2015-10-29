@@ -62,7 +62,7 @@ class Widget_MoodleCoursesView extends WP_Widget
         elseif($instance['contenttype'] == '2')
         {
 			$catcourses = get_moodle_categories_and_courses($this->moodle_ws_url, $this->moodle_site_token);
-			foreach($catcourses as $cc)
+			foreach($catcourses['courses'] as $cc)
 			{
 				$category = $cc['category'];
 				echo "<div class='catcourses'>";
@@ -179,7 +179,7 @@ class Widget_MoodleCoursesView extends WP_Widget
 		echo "<p class='moocview-pmorelinkurl-class' $display_style>";
 		echo '<input class="widefat" id="'.$this->get_field_id('morelinkurl').'" name="'.$this->get_field_name('morelinkurl').'" type="text"';
         $v = isset($instance['morelinkurl'])? $instance['morelinkurl']:"";
-        echo 'value="'.$v.'" placeholder="http://"/>';
+		echo 'value="'.$v.'" placeholder="http://"/>';
         echo "</p>";
 		
 		$display_style = ($instance['contenttype'] == 2 && $instance['morelink'] == 'other')? "":"style='display:none;'"; 
@@ -213,6 +213,7 @@ class Widget_MoodleCoursesView extends WP_Widget
 		}
 		elseif($new_instance['morelink'] != 'other')
 		{
+			$instance['morelinkurl'] = $instance['morelink'];
 			$instance['categoryparam'] = 'categoryid';
 		}
 		elseif($instance['contenttype'] == 2 && $instance['morelink'] == 'other' && empty($instance['morelinkurl']))

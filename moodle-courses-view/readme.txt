@@ -95,7 +95,10 @@ The default value is "list". Thus use the shortcode in one of the following ways
 
 == Changelog ==
 
-= 1.1 =
+= 1.2 =
+ * Improvements relative to reducing response times in retrieving moodle data
+
+ = 1.1 =
  * Moodle courses view shortcode
  * Plugin internationalization (for some reason, the greek locale is not defined as el_GR in WP but simply as el, so an additional moodle-courses-view-el.mo is provided in the language files)
  
