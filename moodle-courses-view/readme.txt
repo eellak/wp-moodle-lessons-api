@@ -1,11 +1,11 @@
 === Moodle Courses View ===
 Contributors: Angela Dimitriou
-Tested to: 4.3
+Tested on: WP 4.3
 Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A plugin to display in a wordpress site the list of courses and course categories of a moodle installation.
+Moodle Courses View (MooCView) plugin adds the capability of viewing courses and categories exracted from a Moodle site to a Wordpress site. This functionality is offered both via a widget and a shortcode.
 
 == Description ==
 
@@ -51,7 +51,7 @@ This plugin adds the capability of viewing courses and categories exracted from 
 
 = Plugin installation =
 
-Download and uncompress the Moodle Courses View plugin in the plugins directory of wordpress. Activate it and complete the options form in the settings page. The information required are:
+Download and uncompress the Moodle Courses View plugin in the plugins directory of wordpress. Activate it and fill in the options form in the settings page. The information required are:
  * the moodle site which hosts the web service
  * the service path (usually /webservice/rest/server.php) 
  * the token created for the web service user in the moodle site
@@ -62,7 +62,7 @@ Download and uncompress the Moodle Courses View plugin in the plugins directory 
  * the user view path of the moodle site
  * the user id parameter to be appended to the category view path of the moodle site
 
-== Add moodle course list to the WP site ==
+== Add MooCView to the WP site ==
 
 = Add widget = 
 
